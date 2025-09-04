@@ -2,4 +2,64 @@ openapi: 3.0.0
 info:
     version: 1.0.0
     title: PoomTestAPI
-paths: {}
+paths:
+  /golden-data/mdm-info:
+    get:
+      tags:
+        - Golden Data
+      summary: Fetch golden MDM data
+      parameters:
+        - in: query
+          name: personal_id
+          schema:
+            type: string
+          description: Personal ID (สามารถใส่หลายค่าโดยใช้ `;` คั่น)
+        - in: query
+          name: date_of_birth
+          schema:
+            type: string
+            format: date
+          description: วันเกิด (yyyy-MM-dd)
+        - in: query
+          name: first_name
+          schema:
+            type: string
+        - in: query
+          name: last_name
+          schema:
+            type: string
+        - in: query
+          name: mdm_id
+          schema:
+            type: string
+          description: MDM ID (สามารถใส่หลายค่าโดยใช้ `;` คั่น)
+        - in: query
+          name: policy_no
+          schema:
+            type: string
+          description: หมายเลข policy (สามารถใส่หลายค่าโดยใช้ `;` คั่น)
+        - in: query
+          name: member_no
+          schema:
+            type: string
+        - in: query
+          name: dependent_no
+          schema:
+            type: string
+        - in: query
+          name: party_row_id
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Data fetched successfully
+        '400':
+          description: Invalid input
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: No data found
+        '500':
+          description: Internal server error
