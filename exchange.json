@@ -1,0 +1,11 @@
+{
+  "main": "poomtestapi.yaml",
+  "name": "PoomTestAPI",
+  "classifier": "oas",
+  "organizationId": "",
+  "descriptorVersion": "1.0.0",
+  "tags": [],
+  "groupId": "",
+  "assetId": "poomtestapi",
+  "version": "1.0.0"
+}
